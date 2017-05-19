@@ -22,5 +22,13 @@ public class test {
 		String actual = ite.translateEng(21);
 		assertThat(actual,is(expected));
 	}
+	
+	@Test
+	public void print3のテスト() {
+		IntToEng ite = new IntToEng();
+		String expected="eighteen";
+		String actual = ite.translateEng(18);
+		assertThat(actual,is(expected));
+	}
 
 }

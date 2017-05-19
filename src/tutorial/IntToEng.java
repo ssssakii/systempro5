@@ -16,8 +16,10 @@ public class IntToEng {
     static String translateEng(int n) {
     	if (n/10 == 0) {
     		return print1(n);
-    	}else if (n/10 !=0 ) {
+    	}else if (n/10 > 1) {
     		return print2(n)+" "+print1(n%10);
+    	}else if (n/10 == 1) {
+    		return print3(n);
     	}
     	
     	return "";
@@ -44,7 +46,7 @@ public class IntToEng {
 		String no = "";
 		switch (a/10) {
 			case 0: break;
-			case 1: no = "ten"; break;
+			case 1: break;
 			case 2: no = "twenty"; break;
 			case 3: no = "thirty"; break;
 			case 4: no = "forty"; break;
@@ -53,6 +55,22 @@ public class IntToEng {
 			case 7: no = "seventy"; break;
 			case 8: no = "eighty"; break;
 			case 9: no = "ninety"; break;
+		}
+		return no;
+	}
+	//Teenの取り扱い
+	static String print3 (int a) {
+		String no = "";
+		switch (a%10) {
+		case 1: no = "eleven"; break;
+		case 2: no = "twelve"; break;
+		case 3: no = "thirteen"; break;
+		case 4: no = "fourteen"; break;
+		case 5: no = "fifteen"; break;
+		case 6: no = "sixteen"; break;
+		case 7: no = "seventeen"; break;
+		case 8: no = "eighteen"; break;
+		case 9: no = "nineteen"; break;
 		}
 		return no;
 	}
