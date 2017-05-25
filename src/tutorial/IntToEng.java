@@ -20,7 +20,7 @@ public class IntToEng {
     		return print2(n)+" "+print1(n%10);
     	}else if (n/10 == 1) {
     		return print3(n);
-    	}else if (n/10 >= 10) {
+    	}else if (n/10 >= 10 ) {
     		return print4(n)+" "+print1(n%10);
     	}
     	
@@ -30,7 +30,7 @@ public class IntToEng {
 	static String print1 (int a) {
 		String no = "";
 		switch (a) {
-			case 0: no = "zero";break;
+			case 0: break;
 			case 1: no = "one"; break;
 			case 2: no = "two"; break;
 			case 3: no = "three"; break;
@@ -78,7 +78,18 @@ public class IntToEng {
 	}
 	
 	static String print4 (int a) {
-		String no = "hundred";
+		String no = "";
+		switch (a/10) {
+		case 10: no = "hundred"; break;
+		case 20: no = "two hundred"; break;
+		case 30: no = "three hundred"; break;
+		case 40: no = "four hundred"; break;
+		case 50: no = "five hundred"; break;
+		case 60: no = "six hundred"; break;
+		case 70: no = "seven hundred"; break;
+		case 80: no = "eight hundred"; break;
+		case 90: no = "nine hundred"; break;
+		}
 		
 		return no;
 	}

@@ -34,16 +34,16 @@ public class test {
 	@Test
 	public void printのテスト() {
 		IntToEng ite = new IntToEng();
-		String expected="zero";
-		String actual = ite.translateEng(0);
+		String expected="five";
+		String actual = ite.translateEng(5);
 		assertThat(actual,is(expected));
 	}
 	
 	@Test
 	public void print4のテスト() {
 		IntToEng ite = new IntToEng();
-		String expected="hundred one";
-		String actual = ite.translateEng(101);
+		String expected="nine hundred nine";
+		String actual = ite.translateEng(909);
 		assertThat(actual,is(expected));
 	}
 }
