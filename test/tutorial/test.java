@@ -18,7 +18,7 @@ public class test {
 	@Test
 	public void print2のテスト() {
 		IntToEng ite = new IntToEng();
-		String expected="twenty one";
+		String expected="twentyone";
 		String actual = ite.translateEng(21);
 		assertThat(actual,is(expected));
 	}
@@ -42,8 +42,32 @@ public class test {
 	@Test
 	public void print4のテスト() {
 		IntToEng ite = new IntToEng();
-		String expected="nine hundred nine";
+		String expected="ninehundrednine";
 		String actual = ite.translateEng(909);
+		assertThat(actual,is(expected));
+	}
+	
+	@Test
+	public void print0のテスト() {
+		IntToEng ite = new IntToEng();
+		String expected="ninehundrednineteen";
+		String actual = ite.translateEng(919);
+		assertThat(actual,is(expected));
+	}
+	
+	@Test
+	public void print00のテスト() {
+		IntToEng ite = new IntToEng();
+		String expected="zero";
+		String actual = ite.translateEng(0);
+		assertThat(actual,is(expected));
+	}
+	
+	@Test
+	public void print10のテスト() {
+		IntToEng ite = new IntToEng();
+		String expected="ten";
+		String actual = ite.translateEng(10);
 		assertThat(actual,is(expected));
 	}
 }

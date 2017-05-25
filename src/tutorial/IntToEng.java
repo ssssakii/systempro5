@@ -14,14 +14,20 @@ public class IntToEng {
     }
     // 数値を英訳する変換するメソッド
     static String translateEng(int n) {
-    	if (n/10 == 0) {
+    	if (n/10 == 0 && n!=0) {
     		return print1(n);
     	}else if (n/10 > 1 && n/10 < 10) {
-    		return print2(n)+" "+print1(n%10);
-    	}else if (n/10 == 1) {
+    		return print2(n)+print1(n%10);
+    	}else if (n/10 == 1 && n!=10) {
     		return print3(n);
-    	}else if (n/10 >= 10 ) {
-    		return print4(n)+" "+print1(n%10);
+    	}else if (n/100 >= 1 && n/100<=9 && (n%100<10 || n%100>=20)) {
+    		return print4(n)+print2(n%100)+print1(n%10);  		
+    	}else if (n/100 >= 1 && n/100<=9 && n%100<20 && n%100>10) {
+    		return print4(n)+print3(n%100);
+    	}else if (n==10) {
+    		return "ten";
+    	}else if (n==0) {
+    		return "zero";
     	}
     	
     	return "";
@@ -79,16 +85,16 @@ public class IntToEng {
 	
 	static String print4 (int a) {
 		String no = "";
-		switch (a/10) {
-		case 10: no = "hundred"; break;
-		case 20: no = "two hundred"; break;
-		case 30: no = "three hundred"; break;
-		case 40: no = "four hundred"; break;
-		case 50: no = "five hundred"; break;
-		case 60: no = "six hundred"; break;
-		case 70: no = "seven hundred"; break;
-		case 80: no = "eight hundred"; break;
-		case 90: no = "nine hundred"; break;
+		switch (a/100) {
+		case 1: no = "hundred"; break;
+		case 2: no = "twohundred"; break;
+		case 3: no = "threehundred"; break;
+		case 4: no = "fourhundred"; break;
+		case 5: no = "fivehundred"; break;
+		case 6: no = "sixhundred"; break;
+		case 7: no = "sevenhundred"; break;
+		case 8: no = "eighthundred"; break;
+		case 9: no = "ninehundred"; break;
 		}
 		
 		return no;
