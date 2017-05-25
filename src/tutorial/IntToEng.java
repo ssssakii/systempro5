@@ -16,10 +16,12 @@ public class IntToEng {
     static String translateEng(int n) {
     	if (n/10 == 0) {
     		return print1(n);
-    	}else if (n/10 > 1) {
+    	}else if (n/10 > 1 && n/10 < 10) {
     		return print2(n)+" "+print1(n%10);
     	}else if (n/10 == 1) {
     		return print3(n);
+    	}else if (n/10 >= 10) {
+    		return print4(n)+" "+print1(n%10);
     	}
     	
     	return "";
@@ -72,6 +74,12 @@ public class IntToEng {
 		case 8: no = "eighteen"; break;
 		case 9: no = "nineteen"; break;
 		}
+		return no;
+	}
+	
+	static String print4 (int a) {
+		String no = "hundred";
+		
 		return no;
 	}
 

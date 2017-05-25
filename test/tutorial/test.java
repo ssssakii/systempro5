@@ -31,4 +31,19 @@ public class test {
 		assertThat(actual,is(expected));
 	}
 
+	@Test
+	public void printのテスト() {
+		IntToEng ite = new IntToEng();
+		String expected="zero";
+		String actual = ite.translateEng(0);
+		assertThat(actual,is(expected));
+	}
+	
+	@Test
+	public void print4のテスト() {
+		IntToEng ite = new IntToEng();
+		String expected="hundred one";
+		String actual = ite.translateEng(101);
+		assertThat(actual,is(expected));
+	}
 }
